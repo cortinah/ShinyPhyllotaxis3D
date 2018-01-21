@@ -8,7 +8,7 @@ library(plotly)
 ui <- fluidPage(
    # Application title
    titlePanel('Phyllotaxis in 3D by @cortinah.'),
-   print("Based on Stephen Wolfram's New Kind of Science, page 411."),
+   print("Based on Stephen Wolfram's New Kind of Science (page 411 and CDF)"),
    hr(),
    # Sidebar with a slider input for number of bins 
    sidebarLayout(
@@ -39,7 +39,7 @@ ui <- fluidPage(
                     max = 0.65,
                     value = 0.45),
         selectInput(inputId = "pal",
-                    label = "Color Pallette:",
+                    label = "Color Palette:",
                     choices = c('Greens','Viridis','Blackbody','Bluered','Blues','Earth',
                                  'Electric','Greys','Hot','Jet','Picnic','Portland',
                                  'Rainbow','RdBu','Reds','YlGnBu','YlOrRd'))
