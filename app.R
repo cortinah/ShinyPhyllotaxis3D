@@ -16,8 +16,8 @@ ui <- fluidPage(
          sliderInput("n",
                      "Number of points:",
                      min = 2,
-                     max = 300,
-                     value = 200),
+                     max = 1000,
+                     value = 250),
         sliderInput("size",
                     "Size of points:",
                     min = 1,
@@ -55,7 +55,7 @@ ui <- fluidPage(
 
 # Define server logic required to draw a histogram
 server <- function(input, output) {
-   
+  options(warn = -1)
    output$philloPlot <- renderPlotly({
       # generate df based on input$ from ui.R
      i <- (1:input$n)
@@ -76,11 +76,11 @@ server <- function(input, output) {
      range=c(-sqrt(input$n),sqrt(input$n)) )
      
      
-   
-   p <- plot_ly(df, x = ~x, y = ~y, z = ~z , hoverinfo='none', marker=list(size=~input$size, color=~-(x^2+y^2+z^2)^(1/3), colorscale=input$pal, showscale=F)) %>% add_markers() %>%
-     layout(width=540, height=540,scene=list(xaxis=ax,yaxis=ax,zaxis=ax[1:5],
-                                             camera = list(eye = list(x = -1.5, y = 0, z = 1))),margin=list(
-       l = 0, r = 0, b = 0, t = 0, pad = 5), paper_bgcolor='#F0F0F0')
+       p <- plot_ly(df, x = ~x, y = ~y, z = ~z , hoverinfo='none', marker=list(size=~input$size, color=~-(x^2+y^2+z^2)^(1/3), colorscale=input$pal, showscale=F)) %>% add_markers() %>%
+         layout(width=540, height=540,scene=list(xaxis=ax,yaxis=ax,zaxis=ax[1:5],
+                                                 camera = list(eye = list(x = -1.5, y = 0, z = 1))),margin=list(
+                                                   l = 0, r = 0, b = 0, t = 0, pad = 5), paper_bgcolor='#F0F0F0')
+    
    })
 }
 
