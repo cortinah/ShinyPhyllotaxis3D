@@ -47,7 +47,9 @@ ui <- fluidPage(
       
       # Show a plot of the generated distribution
       mainPanel(
-        plotlyOutput("philloPlot")
+        plotlyOutput("philloPlot"),
+        HTML("<br><br><br><br><br><br><br><br>"),
+        print("https://github.com/cortinah/ShinyPhyllotaxis3D")
       )
    )
 )
