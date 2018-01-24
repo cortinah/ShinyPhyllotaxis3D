@@ -65,7 +65,7 @@ server <- function(input, output) {
      y <- sqrt(i) * cos(i*input$angle)
      z <- sqrt(i) * -input$pointiness * (i + 1^-10)^input$pexp
      
-     df <- data.frame(i, x, y, z)
+     df <- tibble::tibble(i, x, y, z)
      df$z <- df$z + max(abs(df$z))
      
       # draw the scatterplot
