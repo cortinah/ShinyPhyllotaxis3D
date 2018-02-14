@@ -5,8 +5,8 @@ Use it here:
 https://cortinah.shinyapps.io/phyllotaxis3d/
 
 Some example images:
-![](../images/A.png)
-![](../images/B.png)
-![](../images/C.png)
-![](../images/D.png)
-![](../images/E.png)
+![](../master/images/A.png)
+![](../master/images/D.png)
+![](../master/images/E.png)
+![](../master/images/C.png)
+![](../master/images/B.png)
