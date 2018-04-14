@@ -7,8 +7,9 @@ library(plotly)
 # Define UI for application that draws a histogram
 ui <- fluidPage(
    # Application title
-   titlePanel('Phyllotaxis in 3D by @cortinah.'),
-   print("Based on Stephen Wolfram's New Kind of Science (page 411 and CDF)"),
+   titlePanel('Phyllotaxis in 3D by @cortinah'),
+   print("Based on Stephen Wolfram's New Kind of Science (page 411 and CDF)\n"),
+   url <- a("Accompanying R(e)Thinking blog post", href="http://rethinking.rbind.io/2018/02/19/phyllotaxis3d-belatedly/"),
    hr(),
    # Sidebar with a slider input for number of bins 
    sidebarLayout(
@@ -49,8 +50,8 @@ ui <- fluidPage(
       mainPanel(
         plotlyOutput("philloPlot"),
         HTML("<br><br><br><br><br><br><br><br>"),
-        print("https://github.com/cortinah/ShinyPhyllotaxis3D")
-      )
+        url <- a("https://github.com/cortinah/ShinyPhyllotaxis3D", href="https://github.com/cortinah/ShinyPhyllotaxis3D")
+        )
    )
 )
 
